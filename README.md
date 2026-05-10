@@ -1,5 +1,4 @@
 # GYM-PRO
-a database-driven gym application that I designed focusing on UI and UX.
 
 
 <img width="1920" height="934" alt="image" src="https://github.com/user-attachments/assets/bad515ba-059f-482b-82e8-17311718733a" />
