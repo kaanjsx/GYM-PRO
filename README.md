@@ -14,7 +14,7 @@ Projede Tailwind CSS, Glassmorphism (cam efekti) ve karanlık/aydınlık tema mo
 
 | **Dashboard & Tema Motoru** | **AI Beslenme Asistanı** |
 | --- | --- |
-| ![Dashboard](public/assets/img/dashboard.png) | ![AI Assistant](public/assets/img/ai-assistant.png) |
+| ![Dashboard](screenshot/dashboard.png) | ![AI Assistant](public/assets/img/ai-assistant.png) |
 | **Güç Radarı & Kas Isı Haritası** | **PT Program Editörü** |
 | ![Analiz Paneli](public/assets/img/analysis-radar.png) | ![Program Editörü](public/assets/img/program-editor.png) |
 | **Mobil Uyumlu Arayüz** | **PDF Gelişim Raporu** |
