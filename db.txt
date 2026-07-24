@@ -1,0 +1,47 @@
+-- 1. USERS TABLOSU (Üyeler, Hocalar, Admin ve Fiziksel Veriler)
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` enum('admin','pt','member') DEFAULT 'member',
+  `avatar` varchar(255) DEFAULT 'default.png',
+  `height` float DEFAULT 0,
+  `weight` float DEFAULT 0,
+  `fat_ratio` float DEFAULT 0,
+  `start_weight` float DEFAULT 0,
+  `target_weight` float DEFAULT 0,
+  `pt_id` int(11) DEFAULT NULL,
+  `created_at` timestamp DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`),
+  KEY `pt_id` (`pt_id`),
+  CONSTRAINT `fk_pt` FOREIGN KEY (`pt_id`) REFERENCES `users` (`id`) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 2. PROGRAMS TABLOSU (Hocaların yazdığı Json formatlı antrenman programları)
+CREATE TABLE `programs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `trainer_id` int(11) NOT NULL,
+  `program_details` longtext NOT NULL, -- Json verisi burada tutuluyor
+  `created_at` timestamp DEFAULT current_timestamp(),
+  `updated_at` timestamp DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `trainer_id` (`trainer_id`),
+  CONSTRAINT `fk_prog_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_prog_trainer` FOREIGN KEY (`trainer_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 3. USER_STATS TABLOSU (Profil sayfasından güncellenen geçmiş kilo/yağ takibi için)
+CREATE TABLE `user_stats` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `weight` float DEFAULT 0,
+  `fat_ratio` float DEFAULT 0,
+  `date` date NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `fk_stat_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
