@@ -17,8 +17,8 @@ Projede Tailwind CSS, Glassmorphism (cam efekti) ve karanlık/aydınlık tema mo
 | ![Dashboard](screenshot/dashboard.png) | ![AI Assistant](screenshot/asistan.png) |
 | **Güç Radarı & Kas Isı Haritası** | **PT Program Editörü** |
 | ![Analiz Paneli](screenshot/kas-ısı.png) | ![Program Editörü](screenshot/pteditor.png) |
-| **Mobil Uyumlu Arayüz** | **PDF Gelişim Raporu** |
-| ![Mobil Arayüz](screenshot/mobil.png) | ![PDF Rapor](screenshot/rapor.png) |
+| **Farklı Tema Seçenekleri** | **Farklı Tema** |
+| ![Mobil Arayüz](screenshot/2.png) | ![PDF Rapor](screenshot/3.png) |
 
 ---
 
